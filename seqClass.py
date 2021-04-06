@@ -2,6 +2,7 @@
 
 import sys, re
 from argparse import ArgumentParser
+# importing the librarys
 
 parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
@@ -9,9 +10,9 @@ parser.add_argument("-m", "--motif", type = str, required = False, help = "Motif
 if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
-
+# check for input
 args = parser.parse_args()
-
+# parse, parse , sparse
 args.seq = args.seq.upper()
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
@@ -29,4 +30,6 @@ if args.motif:
     print("FOUND")
   else:
     print("NOT FOUND")
+
+# please read moar
 
